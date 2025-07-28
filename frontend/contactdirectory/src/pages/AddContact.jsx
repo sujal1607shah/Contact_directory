@@ -50,8 +50,8 @@ function AddContact() {
     setSaving(true);
     
     try {
-      
-     const response = await axios.post('http://localhost:8000/api/contacts', form);
+
+     const response = await axios.post('https://contact-directory-icfe.onrender.com/api/contacts', form);
 
       if (response.status === 201 || response.status === 200) {
       alert('Contact added successfully!');

@@ -18,7 +18,7 @@ function EditContact() {
 useEffect(() => {
   const fetchContact = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/contacts/${id}`);
+      const res = await axios.get(`https://contact-directory-icfe.onrender.com/api/contacts/${id}`);
       setForm(res.data);
     } catch (err) {
       console.error('Failed to fetch contact:', err);
@@ -73,7 +73,7 @@ useEffect(() => {
     setSaving(true);
     
    try {
-  await axios.put(`http://localhost:8000/api/contacts/${id}`, form);
+  await axios.put(`https://contact-directory-icfe.onrender.com/api/contacts/${id}`, form);
   alert('Contact updated successfully!');
    navigate('/');
 } catch (err) {

@@ -10,7 +10,7 @@ function Home() {
   // Fetch contacts from backend
   const fetchContacts = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/contacts");
+      const response = await axios.get("https://contact-directory-icfe.onrender.com/api/contacts");
       setContacts(response.data.data); // assuming ApiResponse structure
     } catch (error) {
       console.error("Failed to fetch contacts:", error.message);
@@ -24,7 +24,7 @@ function Home() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/contacts/${id}`);
+      await axios.delete(`https://contact-directory-icfe.onrender.com/api/contacts/${id}`);
       setContacts((prev) => prev.filter((c) => c._id !== id)); // Update UI
     } catch (error) {
       console.error("Delete failed:", error.message);

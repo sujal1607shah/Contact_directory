@@ -5,7 +5,10 @@ import contactRoutes from "./routes/contact.router.js"; // Adjust path if needed
 const app = express();
 
 // Middleware
-app.use(cors()); // Enables CORS
+app.use(cors({
+    origin: '*', // or restrict to your frontend URL in production
+  credentials: true
+})); // Enables CORS
 app.use(express.json()); // Parses JSON body
 
 // Routes
